@@ -1,6 +1,6 @@
 {
   "name": "randal",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Randal picks the order for the game.",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,9 @@
     "random",
     "game"
   ],
+  "bin": {
+    "randal": "./index.js"
+  },
   "author": "John Weis <weis.john@gmail.com>",
   "license": "BSD",
   "readmeFilename": "README.md",
