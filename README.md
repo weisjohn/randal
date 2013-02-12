@@ -20,4 +20,5 @@ and
 
 ```bash
 $ echo "john paul george ringo" | randal 
+paul george john ringo
 ```
