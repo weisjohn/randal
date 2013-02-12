@@ -40,6 +40,8 @@ program
 // don't output an empty list
 if (program.args.length) {
     var args = program.args;
+
+    // handle the redirction file descriptor
     if (program.args.length === 1 && program.args[0] == "/dev/fd/63") {    
         args = fs.readFileSync("/dev/fd/63");
         args = args.toString('utf-8').replace("\n", "").split(" ");
