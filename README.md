@@ -9,9 +9,15 @@ $ randal joe john jim
 jim joe john
 ```
 
-He also accepts redirection
+He also accepts redirection:
 
 ```bash
 $ randal <(echo "jim joe james john")
 john jim james joe
+```
+
+and 
+
+```bash
+$ echo "john paul george ringo" | randal 
 ```
