@@ -1,6 +1,6 @@
 {
   "name": "randal",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Randal picks the order for the game.",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "game"
   ],
   "bin": {
-    "randal": "./index.js"
+    "randal": "./cli.js"
   },
   "author": "John Weis <weis.john@gmail.com>",
   "license": "BSD",

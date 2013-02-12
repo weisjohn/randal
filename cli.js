@@ -15,8 +15,8 @@ program
     })
     .parse(process.argv);
 
-function ret() {
-    randal.apply(null, args).join(' '));
+function ret(args) {
+    console.log(randal.apply(null, args).join(" "));
 }
 
 // don't output an empty list
