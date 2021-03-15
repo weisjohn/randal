@@ -2,6 +2,7 @@
 
 var fs = require('fs')
   , randal = require('./index')
+  , play = require('play')
   ;
 
 // set up the cli
