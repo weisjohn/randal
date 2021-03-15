@@ -7,22 +7,26 @@ var fs = require('fs')
 // set up the cli
 var program = require('commander');
 program
-    .version('0.0.3')
+    .version('0.0.4')
     .on('--help', function(){
         console.log('  Example: \n');
         console.log('    $ randal joe sally bob');
         console.log('    bob joe sally\n');
     })
+    .option('-l, --limit <number>', 'Limit the output to this number of entries')
     .parse(process.argv);
 
 function ret(args) {
+    if (program.limit) {
+        args = args.slice(0, program.limit);
+    }
     console.log(randal.apply(null, args).join(" "));
 }
 
 // don't output an empty list
 if (program.args.length) {
 
-    // handle the redirction file descriptor
+    // handle the redirection file descriptor
     // e.g. $ ./index.js <(echo "foo bar joe")
     var args = program.args;
     if (program.args.length === 1 && program.args[0] == "/dev/fd/63") {    
