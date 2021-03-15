@@ -2,6 +2,7 @@
 
 var fs = require('fs')
   , randal = require('./index')
+  , player = require('play-sound')(opts = {})
   ;
 
 // set up the cli
@@ -13,10 +14,21 @@ program
         console.log('    $ randal joe sally bob');
         console.log('    bob joe sally\n');
     })
+    .option('-d, --drumroll', 'Play a drumroll before displaying output')
     .parse(process.argv);
 
 function ret(args) {
-    console.log(randal.apply(null, args).join(" "));
+    if (program.drumroll) {
+        player.play('drumroll.wav', function(err) {
+            console.log(randal.apply(null, args).join(" "));
+            if (err) {
+                console.log('Error occurred. Please install a player listed here: https://github.com/shime/play-sound');
+                throw err
+            } 
+        });
+    } else {
+        console.log(randal.apply(null, args).join(" "));
+    }
 }
 
 // don't output an empty list

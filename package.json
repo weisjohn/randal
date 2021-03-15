@@ -22,6 +22,7 @@
   "license": "BSD",
   "readmeFilename": "README.md",
   "dependencies": {
-    "commander": "~1.1.1"
+    "commander": "~1.1.1",
+    "play-sound": "^1.1.3"
   }
 }
