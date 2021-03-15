@@ -13,10 +13,17 @@ program
         console.log('    $ randal joe sally bob');
         console.log('    bob joe sally\n');
     })
+    .option('-d, --drumroll', 'Play a drumroll for a couple seconds before displaying output')
     .parse(process.argv);
 
 function ret(args) {
-    console.log(randal.apply(null, args).join(" "));
+    if (program.drumroll) {
+        play.sound('drumroll.wav', function() {
+            console.log(randal.apply(null, args).join(" "));
+        });
+    } else {
+        console.log(randal.apply(null, args).join(" "));
+    }
 }
 
 // don't output an empty list
