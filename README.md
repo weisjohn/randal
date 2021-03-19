@@ -22,3 +22,10 @@ and
 $ echo "john paul george ringo" | randal 
 paul george john ringo
 ```
+
+Also accepts a limit for the number of entries wanted for output:
+
+```bash
+$ randal -l 2 "jim joe james"
+jim james
+```
