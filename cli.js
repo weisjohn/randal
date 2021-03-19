@@ -17,10 +17,11 @@ program
     .parse(process.argv);
 
 function ret(args) {
+    result = randal.apply(null, args)
     if (program.limit) {
-        args = args.slice(0, program.limit);
+        result= result.slice(0, program.limit)
     }
-    console.log(randal.apply(null, args).join(" "));
+    console.log(result.join(" "));
 }
 
 // don't output an empty list
